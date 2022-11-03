@@ -1,0 +1,19 @@
+body {
+    -webkit-app-region: drag;
+} 
+
+button {
+    -webkit-app-region: none;
+}
+
+input {
+    -webkit-app-region: none;
+}
+
+select {
+    -webkit-app-region: none;
+}
+
+.connections input {
+    width: 100px;
+}

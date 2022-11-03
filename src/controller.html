@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" type="text/css" href="controller.css"/>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
+    <title>ScreenDrawer</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row controls">
+        <div class="col">
+          <button id="clearAreaButton">Clear Area</button>
+          <button id="toggleDrawButton">Toggle Draw</button>
+          Line width : <select id="selWidth">
+          <option value="1">1</option>
+          <option value="3">3</option>
+          <option value="5" selected="selected">5</option>
+          <option value="7">7</option>
+          <option value="9">9</option>
+          <option value="11">11</option>
+          <option value="50">50</option>
+          <option value="200">200</option>
+          </select>
+          Color : <select id="selColor">
+          <option value="black">black</option>
+          <option value="blue">blue</option>
+          <option value="red" selected="selected">red</option>
+          <option value="green">green</option>
+          <option value="yellow">yellow</option>
+          <option value="gray">gray</option>
+          </select>
+        </div>
+      </div>
+      <div class="row" id="connections">
+        <div class="row connections">
+          <label>Host Name:</label>
+          <input type="text" id="userNameTextBox">
+          <label>Server IP:</label>
+          <input type="text" id="ipTextBox">
+        </div>
+        <div class="row">
+          <button id="hostButton">Become Host</button>
+          <button id="clientButton">Become Client</button>
+        </div>
+      </div>
+      <div class="row">
+        <select id="screenSelection">
+        </select>
+        <button id="resizeCanvas">Resize Canvas</button>
+      </div>
+    </div>
+    <!-- You can also require other files to run in this process -->
+    <script src="./module.js"></script>
+    <script src="./controller.js"></script>
+  </body>
+</html>

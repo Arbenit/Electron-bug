@@ -1,0 +1,53 @@
+{
+  "name": "screen-drawer",
+  "productName": "Screen Drawer",
+  "version": "1.0.0",
+  "description": "Allow 1 or more people to draw onto someone elses screen",
+  "main": "build/main.js",
+  "scripts": {
+    "startts": "tsc && copyfiles -u 1 src/**/*.html src/**/*.css build && electron build/main.js",
+    "start": "electron ./",
+    "tsbuild": "tsc && copyfiles -u 1 src/**/*.html src/**/*.css build",
+    "release": "npm run-script tsbuild && electron-builder build",
+    "cleanup": "cleanup.sh"
+  },
+  "keywords": [
+    "ScreenDrawer"
+  ],
+  "author": "Arbenit",
+  "devDependencies": {
+    "electron": "^21.2.2",
+    "tslint": "^5.12.1",
+    "typescript": "^4.4.2",
+    "electron-builder": "^22.14.13",
+    "copyfiles": "^2.4.1"
+  },
+  "dependencies": {
+    "common-js": "^0.3.8",
+    "express": "^4.17.1",
+    "socket.io": "^4.1.2",
+    "socket.io-client": "^4.1.2"
+  },
+  "build": {
+    "appId": "com.screen-drawer",
+    "copyright": "Copyright © 2021 ${author}",
+    "extends": null,
+    "directories": {
+      "output": "dist",
+      "buildResources": "./"
+    },
+    "files": [
+      {
+        "from": ".",
+        "to": ".",
+        "filter": [
+          "build/**/*"
+        ]
+      }
+    ],
+    "nsis": {
+      "createDesktopShortcut": true,
+      "deleteAppDataOnUninstall": true
+    }
+  }
+}

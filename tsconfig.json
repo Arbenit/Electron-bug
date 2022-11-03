@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "outDir": "build",
+        "baseUrl": ".",
+        "paths": {
+          "*": ["node_modules/*"]
+        },
+        "types": ["node"],
+      },
+    "include": ["./src/**/*"]
+  }
