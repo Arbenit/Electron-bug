@@ -17,7 +17,12 @@ declare global {
 
 let screenMapper: any = {};
 
-window.api.on("getIPCId", (event: IpcMainEvent, screenMapperValues: any) => {
-   console.log("getIPCId" + screenMapperValues["controller"]);
+// window.api.on("getIPCId", (event: IpcMainEvent, screenMapperValues: any) => {
+//    console.log("getIPCId" + screenMapperValues["controller"]);
+//    screenMapper = screenMapperValues;
+// });
+
+window.api.getIPCId((event: IpcMainEvent, screenMapperValues: any) => {
+   console.log("new getIPCId" + screenMapperValues["controller"]);
    screenMapper = screenMapperValues;
-})
+});
